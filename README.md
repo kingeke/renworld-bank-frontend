@@ -1,68 +1,81 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> ### RenWorld Bank
 
-## Available Scripts
+This app is a bank for users to create transactions, send and receive money. You can view a demo here [Demo](https://calendar-appointments.herokuapp.com/)
 
-In the project directory, you can run:
+## Features
 
-### `yarn start`
+-   Create appointments for different times in a day.
+-   Edit/Delete an appointment.
+-   Export appointments to Excel or PDF.
+-   Print appointments.
+-   Multiple appointment views (Month, Week, Appointments).
+-   Importing old appointments.
+-   Auto mark an appointment as completed if the end date has passed.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Getting started
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Installation
 
-### `yarn test`
+Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/5.8/installation)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone the repository
 
-### `yarn build`
+    git clone https://github.com/kingeke/Calendar-App.git
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Switch to the repo folder
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+    cd Calendar-App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install all the dependencies using composer
 
-### `yarn eject`
+    composer install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Install all the packages using npm
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Copy the example env file and make the required configuration changes in the .env file
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    cp .env.example .env
 
-## Learn More
+Generate a new application key
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    php artisan key:generate
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Generate a new JWT token key
 
-### Code Splitting
+    php artisan jwt:secret
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+**Make sure you set the correct database connection information before running the migrations**
 
-### Analyzing the Bundle Size
+    php artisan migrate
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Seed database to have access to dummy user
 
-### Making a Progressive Web App
+    php artisan db:seed
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Start the local development server
 
-### Advanced Configuration
+    php artisan serve
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+You can now access the server at http://127.0.0.1:8000
 
-### Deployment
+# Testing
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## PHP
 
-### `yarn build` fails to minify
+To run tests for the backend and assert the app still works 100%, set DB_DATABASE variable in phpunit.xml to your test database, and set JWT_SECRET variable to the variable provided when you ran
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+    php artisan jwt:secret
+
+then run
+
+    php vendor/phpunit/phpunit/phpunit
+
+## Javascript
+
+Jest is the test framework used for this platform.
+
+To run tests use
+
+    npm run test
