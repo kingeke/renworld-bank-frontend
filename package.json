@@ -1,6 +1,6 @@
 {
-  "name": "calendar-app",
-  "version": "0.1.0",
+  "name": "renworld-bank",
+  "version": "1.0.0",
   "private": true,
   "engines": {
     "npm": "6.10.2",
