@@ -28,7 +28,7 @@ export const CustomButton = ({ block = false, variant, title, icon, loading = fa
     <>
         {
             show &&
-            <Button size={size} variant={variant} type={type} block={block} disabled={loading ? true : (disabled ? disabled : false)} onClick={onClick} className={`${className} shadow`}>
+            <Button size={size} variant={variant} type={type} block={block} disabled={loading ? true : (disabled ? disabled : false)} onClick={onClick} className={`${className} shadow-sm`}>
                 {
                     icon && !iconRight && <i className={`fas fa-fw fa-${loading ? 'spinner fa-spin' : icon}`}></i>
                 }

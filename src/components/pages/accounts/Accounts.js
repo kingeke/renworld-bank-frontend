@@ -11,6 +11,8 @@ import TableLayout from '../../layouts/TableLayout'
 import { formAction } from '../../../store/actions/formActions'
 import { apiLinks } from '../../../routes/ApiLinks'
 import { userProfile } from '../../../store/actions/profileActions'
+import { NavLink } from 'react-router-dom'
+import { routeLinks } from '../../../routes/NavLinks'
 
 class Accounts extends Component {
 
@@ -82,28 +84,31 @@ class Accounts extends Component {
 
         return (
             <MainLayout show={loaded} pageTitle="Accounts">
-                <Card className="shadow-sm my-5">
-                    <Card.Body>
-                        <Card.Title className="font-weight-bold">
-                            User Accounts <Badge variant="dark"><FormatNumber number={accounts.total || 0} /></Badge>
-                        </Card.Title>
-                        <Pagination handlePageClick={this.handlePageClick} item={accounts} pageCount={accounts.last_page} position="left" showPage pageLoading={pageLoading} />
-                        <TableLayout loading={pageLoading} columns={columns}>
-                            {
-                                accounts && accounts.data.map((account, index) => (
-                                    <AccountsTableComponent
-                                        handleStatus={this.handleStatus}
-                                        actions={actions}
-                                        account={account}
-                                        fields={fields}
-                                        serial={index + 1}
-                                        key={index}
-                                    />
-                                ))
-                            }
-                        </TableLayout>
-                    </Card.Body>
-                </Card>
+                <div className="my-5">
+                    <NavLink exact to={`${routeLinks.accounts}/create`} className="btn btn-success my-2"><i className="fas fa-plus-square"></i> Create An Account</NavLink>
+                    <Card className="shadow-sm">
+                        <Card.Body>
+                            <Card.Title className="font-weight-bold">
+                                User Accounts <Badge variant="dark"><FormatNumber number={accounts.total || 0} /></Badge>
+                            </Card.Title>
+                            <Pagination handlePageClick={this.handlePageClick} item={accounts} pageCount={accounts.last_page} position="left" showPage pageLoading={pageLoading} />
+                            <TableLayout loading={pageLoading} columns={columns}>
+                                {
+                                    accounts && accounts.data.map((account, index) => (
+                                        <AccountsTableComponent
+                                            handleStatus={this.handleStatus}
+                                            actions={actions}
+                                            account={account}
+                                            fields={fields}
+                                            serial={index + 1}
+                                            key={index}
+                                        />
+                                    ))
+                                }
+                            </TableLayout>
+                        </Card.Body>
+                    </Card>
+                </div>
             </MainLayout>
         )
     }

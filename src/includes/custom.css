@@ -6,6 +6,10 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.container {
+    min-height: 66.6vh;
+}
+
 .user-info p {
     display: inline-block;
 }
@@ -30,6 +34,10 @@ body {
 
 .page-link {
     cursor: pointer;
+}
+
+footer {
+    background-color: #343A40;
 }
 
 /*     Alert    */

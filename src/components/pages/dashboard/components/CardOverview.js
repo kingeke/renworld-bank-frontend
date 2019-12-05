@@ -39,7 +39,7 @@ export function CardOverview({ accounts, transactions, balance }) {
                 cards.map((item, index) => (
                     <Col lg={4} md={6} key={index} className="mb-3">
                         <NavLink exact to={item.to} className="text-decoration-none">
-                            <Card body className="shadow-sm">
+                            <Card body className={`shadow-sm border-${item.color}`}>
                                 <Row>
                                     <Col xs={7}>
                                         <p className="text-muted">{item.title}</p>

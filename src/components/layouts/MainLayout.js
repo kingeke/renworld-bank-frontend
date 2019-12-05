@@ -4,12 +4,12 @@ import { Container } from 'react-bootstrap'
 import { Loader } from './CustomLayouts'
 import TopBar from './TopBar'
 import ErrorBoundary from '../includes/ErrorBoundary'
+import Footer from '../assets/Footer'
 
 export default function MainLayout({ show = true, children, pageTitle = false }) {
     return (
         <Fragment>
             <NavBar />
-
             <Container className="mb-5">
                 <ErrorBoundary>
                     {
@@ -22,6 +22,7 @@ export default function MainLayout({ show = true, children, pageTitle = false })
                     }
                 </ErrorBoundary>
             </Container>
+            <Footer />
         </Fragment>
     )
 }

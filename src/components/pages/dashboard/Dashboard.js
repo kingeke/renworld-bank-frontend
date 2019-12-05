@@ -2,10 +2,10 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getDashboard } from '../../../store/actions/dashboardActions'
+import { getTransaction } from '../../../store/actions/transactionActions'
 import MainLayout from '../../layouts/MainLayout'
 import CardOverview from './components/CardOverview'
 import RecentTransactions from './components/RecentTransactions'
-import { getTransaction } from '../../../store/actions/transactionActions'
 
 export class Dashboard extends Component {
 
