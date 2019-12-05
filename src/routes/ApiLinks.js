@@ -1,4 +1,4 @@
-const server = window.location.origin === 'http://localhost:3000' ? 'live' : 'live'
+const server = window.location.origin === 'http://localhost:3000' ? 'local' : 'live'
 export const endpoint = server === 'local' ? 'http://127.0.0.1:8000' : 'https://api-renworld-bank.herokuapp.com'
 export const api = `${endpoint}/api`
 
