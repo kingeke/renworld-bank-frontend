@@ -10,14 +10,14 @@ export function CardOverview({ accounts, transactions, balance }) {
 
     var cards = [
         {
-            title: 'Accounts',
+            title: 'Account(s)',
             number: accounts,
             color: 'primary',
             to: routeLinks.accounts,
             icon: 'piggy-bank'
         },
         {
-            title: 'Transactions',
+            title: 'Transaction(s)',
             number: transactions,
             color: 'warning',
             to: routeLinks.transactions,
