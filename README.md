@@ -6,8 +6,8 @@ This app is a bank for users to create transactions, send and receive money. You
 
 -   Create an account.
 -   Close/Open an account.
--   Export appointments to Excel or PDF.
--   Print appointments.
+-   Export transactions to Excel or PDF.
+-   Print transactions.
 -   Transfer/Receive funds from other accounts.
 
 # Getting started
