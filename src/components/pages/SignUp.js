@@ -70,7 +70,7 @@ export class SignUp extends Component {
                     <div className="text-center">
                         <h4>Welcome{this.state.name ? ` ${this.state.name}` : ''}, we're glad you're joining us.</h4>
                         <Hr />
-                        <p>We just need some details and we'll get you right to your calendar.</p>
+                        <p>We just need some details and we'll get you right to your dashboard.</p>
                     </div>
                     <FormLayout>
                         <Form ref={this.formRef} className="form-section" onSubmit={this.handleSubmit}>
