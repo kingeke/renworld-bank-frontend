@@ -7,7 +7,7 @@ import { apiLinks } from '../../../routes/ApiLinks'
 import { formAction } from '../../../store/actions/formActions'
 import { userProfile } from '../../../store/actions/profileActions'
 import { CustomButton } from '../../layouts/CustomInputs'
-import { AccountName, AccountNumber, Amount, BankName, FormLayout, FromAccount, Password, ToAccount } from '../../layouts/Forms'
+import { AccountName, AccountNumber, Amount, BankName, FormLayout, FromAccount, Password, ToAccount, Narration } from '../../layouts/Forms'
 import MainLayout from '../../layouts/MainLayout'
 require('parsleyjs')
 
@@ -23,6 +23,7 @@ class Transfer extends Component {
         account_name: '',
         account_number: '',
         password: '',
+        narration: '',
         formSending: false
     }
 
@@ -91,6 +92,7 @@ class Transfer extends Component {
                                 <AccountNumber account_number={this.state.account_number} onChange={this.handleChange} />
                             </Fragment>
                         }
+                        <Narration narration={this.state.narration} onChange={this.handleChange} />
                         <Form.Group>
                             <CustomButton block type="submit" icon='check' loading={this.state.formSending} title="Send" variant="success" onClick={this.handleSubmit} />
                         </Form.Group>

@@ -19,6 +19,10 @@ export const Balance = ({ onChange, balance, placeholder = "Enter starting balan
     <CustomForm label={label} type="number" placeholder={placeholder} name="balance" onChange={onChange} value={balance} />
 )
 
+export const Narration = ({ onChange, narration, placeholder = "Enter narration", label = "Narration" }) => (
+    <CustomForm label={label} type="text" placeholder={placeholder} name="narration" onChange={onChange} value={narration} required={false} />
+)
+
 export const Password = ({ id = "password", onChange, password, label = "Password", placeholder = "Enter your password", name = "password" }) => (
     <CustomForm id={id} label={label} type="password" placeholder={placeholder} name={name} onChange={onChange} value={password} minLength="6" />
 )
