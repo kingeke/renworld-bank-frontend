@@ -22,9 +22,9 @@ export default function AccountsTableComponent({ account, fields, actions, seria
 
                 {value === 'transactions_count' && <FormatNumber number={account.transactions_count} />}
 
-                {value === 'created_at' && <FormatDate number={account.created_at} withTime />}
+                {value === 'created_at' && <FormatDate date={account.created_at} withTime />}
 
-                {value === 'updated_at' && <FormatDate number={account.updated_at} withTime />}
+                {value === 'updated_at' && <FormatDate date={account.updated_at} withTime />}
 
                 {
                     value === 'actions' &&

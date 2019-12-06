@@ -26,9 +26,9 @@ export default function TransactionTableComponent({ transaction, fields, actions
 
                 {value === 'current_balance' && <FormatNumber number={transaction.current_balance} withNaira />}
 
-                {value === 'created_at' && <FormatDate number={transaction.created_at} withTime />}
+                {value === 'created_at' && <FormatDate date={transaction.created_at} withTime />}
 
-                {value === 'updated_at' && <FormatDate number={transaction.updated_at} withTime />}
+                {value === 'updated_at' && <FormatDate date={transaction.updated_at} withTime />}
 
                 {
                     value === 'actions' &&
