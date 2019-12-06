@@ -13,13 +13,13 @@ export function Filters({ filterOptions, handleFilterChange, state, handleFilter
                         <Fragment key={index}>
                             {
                                 option === 'account_number' &&
-                                <Form.Group as={Col} md={3} className="mb-3">
+                                <Form.Group as={Col} md={4} className="mb-3">
                                     <CustomSelect name="account_number" onChange={handleFilterChange} placeholder="Account..." required={false} options={UserAccountsSelect(user.accounts)} value={state.filters.account_number} />
                                 </Form.Group>
                             }
                             {
                                 option === 'type' &&
-                                <Form.Group as={Col} md={3} className="mb-3">
+                                <Form.Group as={Col} md={4} className="mb-3">
                                     <CustomSelect name="type" onChange={handleFilterChange} placeholder="Type..." required={false} options={[
                                         { value: 'credit', label: 'Credit' },
                                         { value: 'debit', label: 'Debit' }
@@ -29,10 +29,10 @@ export function Filters({ filterOptions, handleFilterChange, state, handleFilter
                         </Fragment>
                     ))
                 }
-                <Form.Group as={Col} md={12} className="mb-3">
-                    <CustomButton loading={state.filterLoading} disabled={state.filterLoading} className="mb-3 mr-3" type="button" icon='search' title="Search" variant="success" onClick={handleFilter} />
-                    <CustomButton loading={state.filterLoading} disabled={state.filterLoading} className="mb-3 mr-3" type="button" icon='sync' title="Reset" variant="info" onClick={resetFilters} />
-                </Form.Group>
+            </Form.Row>
+            <Form.Row>
+                <CustomButton loading={state.filterLoading} disabled={state.filterLoading} className="mb-3 mr-3" type="button" icon='search' title="Search" variant="success" onClick={handleFilter} />
+                <CustomButton loading={state.filterLoading} disabled={state.filterLoading} className="mb-3 mr-3" type="button" icon='sync' title="Reset" variant="info" onClick={resetFilters} />
             </Form.Row>
         </Fragment>
     )

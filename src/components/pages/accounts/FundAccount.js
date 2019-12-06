@@ -68,9 +68,7 @@ class FundAccount extends Component {
                     <Form ref={this.formRef} className="form-section" onSubmit={this.handleSubmit}>
                         <FromAccount name="account" label="Account" accounts={user.accounts} from_account={this.state.account} onChange={this.handleChange} />
                         <Amount amount={this.state.amount} onChange={this.handleChange} />
-                        <Form.Group>
-                            <CustomButton block type="submit" icon='check' loading={this.state.formSending} title="Fund" variant="success" onClick={this.handleSubmit} />
-                        </Form.Group>
+                        <CustomButton block type="submit" icon='check' loading={this.state.formSending} title="Fund" variant="success" onClick={this.handleSubmit} />
                     </Form>
                 </FormLayout>
             </MainLayout>

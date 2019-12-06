@@ -77,9 +77,7 @@ export class SignUp extends Component {
                             <Name name={this.state.name} onChange={this.handleChange} />
                             <Email email={this.state.email} onChange={this.handleChange} />
                             <Password password={this.state.password} onChange={this.handleChange} />
-                            <Form.Group>
-                                <CustomButton type="submit" variant="success" icon="check" title="Sign Up" loading={this.state.formSending} onClick={this.handleSubmit} />
-                            </Form.Group>
+                            <CustomButton type="submit" variant="success" icon="check" title="Sign Up" loading={this.state.formSending} onClick={this.handleSubmit} />
                         </Form>
                     </FormLayout>
                 </section>

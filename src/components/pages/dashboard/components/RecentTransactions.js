@@ -4,6 +4,7 @@ import { Card } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import TableLayout from '../../../layouts/TableLayout'
 import TransactionTableComponent from '../../../layouts/TransactionTableComponent'
+import { Hr } from '../../../layouts/CustomLayouts'
 
 export function RecentTransactions({ loaded, recent_transactions, handleView }) {
 
@@ -17,6 +18,7 @@ export function RecentTransactions({ loaded, recent_transactions, handleView }) 
         <Card className="shadow-sm my-5">
             <Card.Body>
                 <Card.Title className="font-weight-bold">Recent Transactions</Card.Title>
+                <Hr align="left" />
                 <TableLayout loading={!loaded} columns={columns}>
                     {
                         recent_transactions && recent_transactions.map((transaction, index) => (

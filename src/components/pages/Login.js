@@ -88,12 +88,10 @@ export class Login extends Component {
                         <Form ref={this.formRef} className="form-section" onSubmit={this.handleSubmit}>
                             <Email email={this.state.email} onChange={this.handleChange} />
                             <Password password={this.state.password} onChange={this.handleChange} />
-                            <Form.Group>
-                                <CustomButton block type="submit" icon='sign-in-alt' loading={this.state.formSending} title="Login" variant="success" onClick={this.handleSubmit} />
-                                <div className='mt-5 text-center'>
-                                    <CustomButton type="button" icon="user" title="Use dummy account" varian="info" onClick={this.handleDummyAccount} />
-                                </div>
-                            </Form.Group>
+                            <CustomButton block type="submit" icon='sign-in-alt' loading={this.state.formSending} title="Login" variant="success" onClick={this.handleSubmit} />
+                            <div className='mt-5 text-center'>
+                                <CustomButton type="button" icon="user" title="Use dummy account" varian="info" onClick={this.handleDummyAccount} />
+                            </div>
                         </Form>
                         <div className="text-center mt-5">
                             <p>Don't have an account ? <NavLink exact to={routeLinks.signUp}>Sign Up Now</NavLink></p>

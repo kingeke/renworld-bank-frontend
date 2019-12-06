@@ -62,9 +62,7 @@ export class EditProfile extends Component {
                     <Form ref={this.formRef} className="form-section" onSubmit={this.handleSubmit}>
                         <Name name={this.state.name} onChange={this.handleChange} />
                         <Email email={this.state.email} onChange={this.handleChange} />
-                        <Form.Group>
-                            <CustomButton type="submit" variant="success" icon="upload" title="Update" loading={this.state.formSending} onClick={this.handleSubmit} />
-                        </Form.Group>
+                        <CustomButton type="submit" variant="success" icon="upload" title="Update" loading={this.state.formSending} onClick={this.handleSubmit} />
                     </Form>
                 </FormLayout>
             </MainLayout>

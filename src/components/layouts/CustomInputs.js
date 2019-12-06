@@ -1,5 +1,5 @@
-import React from 'react'
-import { Form, Button } from "react-bootstrap";
+import React from 'react';
+import { Button, Form } from "react-bootstrap";
 
 export const Label = ({ label, name, required = false, className = "form-control-label" }) => (
     <label htmlFor={label} className={className}>{name}:{required && <span className="text-danger">*</span>}</label>
@@ -25,7 +25,7 @@ export const CustomTextArea = ({ formRef, className, label, rows = "3", placehol
 )
 
 export const CustomButton = ({ block = false, variant, title, icon, loading = false, onClick, disabled = false, className, iconRight = false, type, show = true, size, showLoadingText = true }) => (
-    <>
+    <Form.Group>
         {
             show &&
             <Button size={size} variant={variant} type={type} block={block} disabled={loading ? true : (disabled ? disabled : false)} onClick={onClick} className={`${className} shadow-sm`}>
@@ -38,7 +38,7 @@ export const CustomButton = ({ block = false, variant, title, icon, loading = fa
                 }
             </Button>
         }
-    </>
+    </Form.Group>
 )
 
 export const CustomSelect = ({ label, placeholder, name, onChange, value, options, required = true, useLabel = false, withOthers = false }) => (

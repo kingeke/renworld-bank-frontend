@@ -44,13 +44,15 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = ({ users, app }) => {
     return {
         userLoading: users.auth.userLoading,
-        websiteLoading: app.websiteLoading
+        websiteLoading: app.website.websiteLoading
     }
 }
 
 App.propTypes = {
     userLoading: PropTypes.bool,
-    userProfile: PropTypes.func
+    websiteLoading: PropTypes.bool,
+    userProfile: PropTypes.func,
+    getWebsite: PropTypes.func,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

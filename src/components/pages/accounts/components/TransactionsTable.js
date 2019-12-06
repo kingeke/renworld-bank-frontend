@@ -3,7 +3,7 @@ import { Badge, Card } from 'react-bootstrap'
 import TableLayout from '../../../layouts/TableLayout'
 import TransactionTableComponent from '../../../layouts/TransactionTableComponent'
 import { FormatNumber } from '../../../assets/Parsers'
-import { Pagination } from '../../../layouts/CustomLayouts'
+import { Pagination, Hr } from '../../../layouts/CustomLayouts'
 
 export default function TransactionsTable({ transactions, pageLoading, handlePageClick, handleView, }) {
 
@@ -19,6 +19,7 @@ export default function TransactionsTable({ transactions, pageLoading, handlePag
                 <Card.Title className="font-weight-bold">
                     Transactions <Badge variant="dark"><FormatNumber number={transactions.total || 0} /></Badge>
                 </Card.Title>
+                <Hr align="left" />
                 <Pagination handlePageClick={handlePageClick} item={transactions} pageCount={transactions.last_page} position="left" showPage pageLoading={pageLoading} />
                 <TableLayout loading={pageLoading} columns={columns}>
                     {

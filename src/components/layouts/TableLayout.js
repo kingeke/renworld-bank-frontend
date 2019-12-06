@@ -9,7 +9,7 @@ require('datatables.net-buttons/js/buttons.print.js');
 export default function TableLayout({ columns, children, loading = false, onlyTable = false }) {
     return (
         <div className="table-responsive">
-            <table className={`table table-bordered nowrap ${loading && 'hidden'}`} ref={(ref) => setTableRef(ref, loading, onlyTable)} style={{ width: '100%' }}>
+            <table className={`table table-bordered nowrap ${loading && 'hidden'}`} ref={(ref) => setTableRef(ref, loading, onlyTable)}>
                 <thead>
                     <tr>
                         {

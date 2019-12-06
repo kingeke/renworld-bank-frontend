@@ -93,9 +93,7 @@ class Transfer extends Component {
                             </Fragment>
                         }
                         <Narration narration={this.state.narration} onChange={this.handleChange} />
-                        <Form.Group>
-                            <CustomButton block type="submit" icon='check' loading={this.state.formSending} title="Send" variant="success" onClick={this.handleSubmit} />
-                        </Form.Group>
+                        <CustomButton block type="submit" icon='check' loading={this.state.formSending} title="Send" variant="success" onClick={this.handleSubmit} />
                     </Form>
                 </FormLayout>
             </MainLayout>

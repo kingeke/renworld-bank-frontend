@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { getAccounts } from '../../../store/actions/accountActions'
 import { FormatNumber } from '../../assets/Parsers'
 import AccountsTableComponent from '../../layouts/AccountsTableComponent'
-import { Pagination } from '../../layouts/CustomLayouts'
+import { Pagination, Hr } from '../../layouts/CustomLayouts'
 import MainLayout from '../../layouts/MainLayout'
 import TableLayout from '../../layouts/TableLayout'
 import { formAction } from '../../../store/actions/formActions'
@@ -84,31 +84,34 @@ class Accounts extends Component {
 
         return (
             <MainLayout show={loaded} pageTitle="Accounts">
-                <div className="my-5">
-                    <NavLink exact to={`${routeLinks.accounts}/create`} className="btn btn-success my-2"><i className="fas fa-plus-square"></i> Create An Account</NavLink>
-                    <Card className="shadow-sm">
-                        <Card.Body>
-                            <Card.Title className="font-weight-bold">
-                                User Accounts <Badge variant="dark"><FormatNumber number={accounts.total || 0} /></Badge>
-                            </Card.Title>
-                            <Pagination handlePageClick={this.handlePageClick} item={accounts} pageCount={accounts.last_page} position="left" showPage pageLoading={pageLoading} />
-                            <TableLayout loading={pageLoading} columns={columns}>
-                                {
-                                    accounts && accounts.data.map((account, index) => (
-                                        <AccountsTableComponent
-                                            handleStatus={this.handleStatus}
-                                            actions={actions}
-                                            account={account}
-                                            fields={fields}
-                                            serial={index + 1}
-                                            key={index}
-                                        />
-                                    ))
-                                }
-                            </TableLayout>
-                        </Card.Body>
-                    </Card>
+                <div className="my-3 text-right">
+                    <NavLink exact to={`${routeLinks.accounts}/create`} className="btn btn-success">
+                        <i className="fas fa-plus-square"></i> Create An Account
+                    </NavLink>
                 </div>
+                <Card className="shadow-sm">
+                    <Card.Body>
+                        <Card.Title className="font-weight-bold">
+                            User Accounts <Badge variant="dark"><FormatNumber number={accounts.total || 0} /></Badge>
+                        </Card.Title>
+                        <Hr align="left" />
+                        <Pagination handlePageClick={this.handlePageClick} item={accounts} pageCount={accounts.last_page} position="left" showPage pageLoading={pageLoading} />
+                        <TableLayout loading={pageLoading} columns={columns}>
+                            {
+                                accounts && accounts.data.map((account, index) => (
+                                    <AccountsTableComponent
+                                        handleStatus={this.handleStatus}
+                                        actions={actions}
+                                        account={account}
+                                        fields={fields}
+                                        serial={index + 1}
+                                        key={index}
+                                    />
+                                ))
+                            }
+                        </TableLayout>
+                    </Card.Body>
+                </Card>
             </MainLayout>
         )
     }

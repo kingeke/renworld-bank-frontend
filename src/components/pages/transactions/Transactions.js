@@ -4,7 +4,7 @@ import { Badge, Card, Col } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { getTransaction, getTransactions } from '../../../store/actions/transactionActions'
 import { FormatNumber } from '../../assets/Parsers'
-import { Pagination } from '../../layouts/CustomLayouts'
+import { Pagination, Hr } from '../../layouts/CustomLayouts'
 import Filters from '../../layouts/Filters'
 import MainLayout from '../../layouts/MainLayout'
 import TableLayout from '../../layouts/TableLayout'
@@ -112,31 +112,34 @@ export class Transactions extends Component {
                         state={this.state}
                     />
                 </Col>
-                <div className="my-5">
-                    <NavLink exact to={routeLinks.transfer} className="btn btn-success my-2"><i className="fas fa-plus-square"></i> Transfer Money</NavLink>
-                    <Card className="shadow-sm">
-                        <Card.Body>
-                            <Card.Title className="font-weight-bold">
-                                Transactions <Badge variant="dark"><FormatNumber number={transactions.total || 0} /></Badge>
-                            </Card.Title>
-                            <Pagination handlePageClick={this.handlePageClick} item={transactions} pageCount={transactions.last_page} position="left" showPage pageLoading={pageLoading} />
-                            <TableLayout loading={pageLoading} columns={columns}>
-                                {
-                                    transactions && transactions.data.map((transaction, index) => (
-                                        <TransactionTableComponent
-                                            handleView={this.handleView}
-                                            actions={actions}
-                                            transaction={transaction}
-                                            fields={fields}
-                                            serial={index + 1}
-                                            key={index}
-                                        />
-                                    ))
-                                }
-                            </TableLayout>
-                        </Card.Body>
-                    </Card>
+                <div className="my-3 text-right">
+                    <NavLink exact to={routeLinks.transfer} className="btn btn-success">
+                        <i className="fas fa-plus-square"></i> Transfer Money
+                        </NavLink>
                 </div>
+                <Card className="shadow-sm">
+                    <Card.Body>
+                        <Card.Title className="font-weight-bold">
+                            Transactions <Badge variant="dark"><FormatNumber number={transactions.total || 0} /></Badge>
+                        </Card.Title>
+                        <Hr align="left" />
+                        <Pagination handlePageClick={this.handlePageClick} item={transactions} pageCount={transactions.last_page} position="left" showPage pageLoading={pageLoading} />
+                        <TableLayout loading={pageLoading} columns={columns}>
+                            {
+                                transactions && transactions.data.map((transaction, index) => (
+                                    <TransactionTableComponent
+                                        handleView={this.handleView}
+                                        actions={actions}
+                                        transaction={transaction}
+                                        fields={fields}
+                                        serial={index + 1}
+                                        key={index}
+                                    />
+                                ))
+                            }
+                        </TableLayout>
+                    </Card.Body>
+                </Card>
             </MainLayout>
         )
     }

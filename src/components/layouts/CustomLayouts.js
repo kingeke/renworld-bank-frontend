@@ -12,22 +12,9 @@ export const Loader = ({ show = true, position = 'center' }) => {
                 show &&
                 <div className={`d-flex justify-content-${position}`}>
                     <div className="loader">
-                        <div>
-                        </div>
-                        <div>
-                        </div>
-                        <div>
-                        </div>
-                        <div>
-                        </div>
-                        <div>
-                        </div>
-                        <div>
-                        </div>
-                        <div>
-                        </div>
-                        <div>
-                        </div>
+                        {
+                            new Array(8).fill(0).map((v, i) => (<div key={i}></div>))
+                        }
                     </div>
                 </div>
             }

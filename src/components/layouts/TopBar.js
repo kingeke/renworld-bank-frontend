@@ -6,7 +6,7 @@ import { Row, Col } from 'react-bootstrap'
 
 export function TopBar({ pageTitle, user }) {
     return (
-        <Row>
+        <Row className="mb-4">
             <Col sm={6}>
                 <p className="text-center text-sm-left text-uppercase font-weight-bold mb-3">{pageTitle}</p>
             </Col>
