@@ -11,7 +11,7 @@ import { AccountName, AccountNumber, Amount, BankName, FormLayout, FromAccount, 
 import MainLayout from '../../layouts/MainLayout'
 require('parsleyjs')
 
-class Transfer extends Component {
+export class Transfer extends Component {
 
     formRef = React.createRef()
 

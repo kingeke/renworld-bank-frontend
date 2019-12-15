@@ -33,3 +33,11 @@ Install all the packages using npm
 Startup the server
 
     npm start
+
+# Testing
+
+Jest is the test framework used for this platform.
+
+To run tests use
+
+    npm run test

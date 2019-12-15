@@ -6,7 +6,7 @@ import TableLayout from '../../../layouts/TableLayout'
 import TransactionTableComponent from '../../../layouts/TransactionTableComponent'
 import { Hr } from '../../../layouts/CustomLayouts'
 
-export function RecentTransactions({ loaded, recent_transactions, handleView }) {
+function RecentTransactions({ loaded, recent_transactions, handleView }) {
 
     const columns = ['S/N', 'Actions', 'Transaction Ref', 'Type', 'Amount', 'Account Number', 'Narration', 'Created On']
 

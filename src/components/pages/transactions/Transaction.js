@@ -5,7 +5,7 @@ import { getTransaction } from '../../../store/actions/transactionActions'
 import MainLayout from '../../layouts/MainLayout'
 import TransactionLayout from './components/TransactionLayout'
 
-class Transaction extends Component {
+export class Transaction extends Component {
 
     transaction_ref = this.props.match.params.transaction_ref
 

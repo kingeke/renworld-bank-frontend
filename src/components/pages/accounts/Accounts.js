@@ -14,7 +14,7 @@ import { userProfile } from '../../../store/actions/profileActions'
 import { NavLink } from 'react-router-dom'
 import { routeLinks } from '../../../routes/NavLinks'
 
-class Accounts extends Component {
+export class Accounts extends Component {
 
     state = {
         page: 1,

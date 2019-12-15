@@ -94,12 +94,7 @@ export const logOutAction = () => {
                     return showNotification(data.message, 'success')
                 }
             ).catch(
-                error => {
-                    return dispatch({
-                        type: SET_USER,
-                        user: false
-                    })
-                }
+                error => null
             )
         })
     }

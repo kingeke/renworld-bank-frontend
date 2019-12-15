@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { routeLinks } from '../../../../routes/NavLinks'
 
-export function CardOverview({ accounts, transactions, balance }) {
+function CardOverview({ accounts, transactions, balance }) {
 
     var cards = [
         {

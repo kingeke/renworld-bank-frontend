@@ -10,7 +10,7 @@ import TransactionsTable from './components/TransactionsTable'
 import { getTransaction } from '../../../store/actions/transactionActions'
 import { userProfile } from '../../../store/actions/profileActions'
 
-class Account extends Component {
+export class Account extends Component {
 
     account_number = this.props.match.params.account_number
 

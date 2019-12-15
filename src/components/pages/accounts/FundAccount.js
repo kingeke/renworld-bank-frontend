@@ -11,7 +11,7 @@ import { Amount, FormLayout, FromAccount } from '../../layouts/Forms'
 import MainLayout from '../../layouts/MainLayout'
 require('parsleyjs')
 
-class FundAccount extends Component {
+export class FundAccount extends Component {
 
     formRef = React.createRef()
 
